@@ -22,11 +22,11 @@ h1 {
 
 img {
     max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+    height: 200px;
+    margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
 }
 
 .options {
