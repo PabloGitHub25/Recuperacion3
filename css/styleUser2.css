@@ -29,62 +29,12 @@ img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
 }
 
-.options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #8083AC;
-    color: #FFF;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-a.button:hover {
-    background-color: #4B5082;
-}
-
-
-
-
-
-
-
 .tareas-container {
-    max-width: 800px;
-    margin: 0 auto;
+    margin-top: 20px; /* Agrega un margen superior para separar el formulario de las tareas */
     padding: 20px;
     background-color: #FFF;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Alinea el texto a la izquierda */
-}
-
-.tareas-container .tarea {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #F8F9FA;
-    border-radius: 5px;
-}
-
-.tareas-container h2 {
-    color: #242857;
-    margin-bottom: 10px;
-}
-
-.tareas-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.tareas-container input[type="checkbox"] {
-    margin-right: 5px;
 }
 
 .button {
