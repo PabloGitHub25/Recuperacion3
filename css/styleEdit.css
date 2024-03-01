@@ -2,6 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: black; /* Cambia el color del texto a negro */
 }
 
 table {
@@ -11,11 +12,10 @@ table {
 
 table, th, td {
     border: 1px solid black;
-    
 }
 
 .titulo-fila th {
-    background-color: #4B5082; /* Color de fondo para las filas de títulos */
+    background-color: #8083AC; /* Color de fondo para las filas de títulos */
     color: white;
 }
 
@@ -26,12 +26,18 @@ th, td {
 
 select {
     padding: 5px;
-    background-color:#6f75af ;
+    background-color:#6f75af80 ;
+    color: black; /* Cambia el color del texto del select a negro */
+}
+
+select option[value="Pendiente"],
+select option[value="Completado"] {
+    color: white; /* Cambia el color del texto de las opciones a blanco */
 }
 
 input[type="submit"] {
     padding: 10px;
-    background-color: #4B5082; /* Color verde */
+    background-color: #8083AC; /* Color de fondo para el botón */
     color: white;
     border: none;
     border-radius: 5px;
@@ -39,5 +45,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #242857; /* Cambia el color al pasar el ratón sobre él */
+    background-color: #242857; /* Cambia el color al pasar el ratón sobre el botón */
 }

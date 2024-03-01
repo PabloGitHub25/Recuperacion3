@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($resultTarea);
 <body>
     <div class="container">
         <h1>Editar Tarea</h1>
-        <img src="../public/img/inicio.png" alt="Imagen">
+        <img src="../public/img/editar_eliminar.jpg" alt="Imagen">
         <form action="../Model/MEliminarTareasA.php" method="post" class="tareas-container">
             <input type="hidden" name="id" value="<?php echo $row['idTarea']; ?>">
             <label for="nombre">Nombre de la tarea: </label>
