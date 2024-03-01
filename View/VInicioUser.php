@@ -15,7 +15,7 @@
         <div class="options">
             <a href="../View/VIngresoTareaU.php" class="button">Ingresar tareas nuevas</a>
             <a href="../View/VEditar.php" class="button">Editar tareas</a>
-            <a href="informe_tareas.php" class="button">Informe sobre tareas</a>
+            <a href="../View/VReportes.php" class="button">Informe sobre tareas</a>
         </div>
     </div>
 </body>
