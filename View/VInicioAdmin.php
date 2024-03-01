@@ -18,7 +18,7 @@
             <a href="../View/VEditarEliminarA.php" class="button">Editar/Eliminar tareas</a>
             <a href="../View/VEditarTareasUserA.php" class="button">Editar/Eliminar tareas de Usuarios</a>
             <a href="informe_tareas.php" class="button">Informes</a>
-            <a href="../View/VEditarDatosUsuario.php" class="button"> Editar Datos Usuario</a>
+            <a href="../View/VBuscarDatosUsuario.php" class="button"> Editar Datos Usuario</a>
         </div>
     </div>
 </body>
