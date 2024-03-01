@@ -28,7 +28,9 @@ if (mysqli_num_rows($resultado) > 0) {
 
         echo '<br>';
 
-        echo '<button onclick="../View/VBuscarDatosUsuario.php" class="button">Cancelar</button>';
+        echo '<button onclick="window.location.href=\'../View/VBuscarDatosUsuario.php\';" class="button">Cancelar</button>';
+
+        echo '<button onclick="window.location.href=\'../View/VEditarDatosUsuario.php\';" class="button">Editar</button>';
         
         // Puedes mostrar más campos aquí según tu estructura de base de datos
     }
