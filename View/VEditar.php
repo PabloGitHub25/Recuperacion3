@@ -59,7 +59,7 @@ if (isset($_SESSION['idUser'])) {
                 ?>
             </table>
                 <br>
-                <center><input type="submit" value="Actualizar Estados"></center>
+                <center><input type="submit" value="Actualizar Estados" ></center>
             
         </form>
     </body>
