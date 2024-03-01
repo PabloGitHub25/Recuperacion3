@@ -33,6 +33,7 @@ function Footer()
 }
 
 // Tabla coloreada
+// Tabla coloreada
 function FancyReservaTable($header, $data)
 {
     // Colores, ancho de línea y fuente en negrita
@@ -43,10 +44,12 @@ function FancyReservaTable($header, $data)
     $this->SetFont('Arial', 'B', 10);
 
     // Calcular el ancho total de la tabla
+    $w = array(30, 45, 30, 30); // Anchos de las columnas
     $anchoTotal = array_sum($w);
 
-    // Calcular la posición X para centrar la tabla
-    $centroX = ($this->GetPageWidth() - $anchoTotal) / 2;
+    // Calcular la posición X para alinear a la izquierda
+    $margenIzquierdo = 10; // Margen izquierdo
+    $this->SetX($margenIzquierdo);
 
     // Cabecera
     for ($i = 0; $i < count($header); $i++) {
@@ -61,9 +64,9 @@ function FancyReservaTable($header, $data)
 
     // Datos
     foreach ($data as $row) {
-        $this->SetX($centroX);
+        $this->SetX($margenIzquierdo);
         foreach ($row as $column) {
-            $this->Cell($w, 6, $column, 1, 0, 'C');
+            $this->Cell($w[$i], 6, $column, 1, 0, 'C');
         }
         $this->Ln(); // Salto de línea después de cada fila
     }
@@ -71,6 +74,7 @@ function FancyReservaTable($header, $data)
     // Línea de cierre
     $this->Cell($anchoTotal, 0, '', 'T');
 }
+
 
 }
 ?>

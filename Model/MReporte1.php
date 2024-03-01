@@ -16,7 +16,7 @@ if (isset($_SESSION['idUser'])) {
     $pdf->AliasNbPages();
     $pdf->AddPage();
 
-    $pdf->SetFont('Arial', 'I', 4);
+    $pdf->SetFont('Arial', 'I', 7);
     $pdf->Ln(20);
 
     // Calcular el ancho total de la tabla
@@ -30,18 +30,18 @@ if (isset($_SESSION['idUser'])) {
 
     // Crear las celdas de la tabla
     $pdf->SetFillColor(192, 194, 215); // #C0C2D7
-    $pdf->Cell(20, 4, 'ID Tarea', 1, 0, 'C', true);
-    $pdf->Cell(30, 4, 'Nombre Tarea', 1, 0, 'C', true);
-    $pdf->Cell(20, 4, 'Tipo Tarea', 1, 0, 'C', true);
-    $pdf->Cell(20, 4, 'Estado', 1, 0, 'C', true);
+    $pdf->Cell(30, 4, 'ID Tarea', 1, 0, 'C', true);
+    $pdf->Cell(45, 4, 'Nombre Tarea', 1, 0, 'C', true);
+    $pdf->Cell(30, 4, 'Tipo Tarea', 1, 0, 'C', true);
+    $pdf->Cell(30, 4, 'Estado', 1, 0, 'C', true);
     $pdf->Ln();
 
     while ($mostrar = mysqli_fetch_array($resultado)) {
         $pdf->SetX($centroX);
-        $pdf->Cell(20, 4, $mostrar['idTarea'], 1, 0, 'C');
-        $pdf->Cell(30, 4, $mostrar['nombreTarea'], 1, 0, 'C');
-        $pdf->Cell(20, 4, $mostrar['tipoTarea'], 1, 0, 'C');
-        $pdf->Cell(20, 4, $mostrar['estado'], 1, 0, 'C');
+        $pdf->Cell(30, 4, $mostrar['idTarea'], 1, 0, 'C');
+        $pdf->Cell(45, 4, $mostrar['nombreTarea'], 1, 0, 'C');
+        $pdf->Cell(30, 4, $mostrar['tipoTarea'], 1, 0, 'C');
+        $pdf->Cell(30, 4, $mostrar['estado'], 1, 0, 'C');
         $pdf->Ln(); // Salto de línea después de cada fila
     }
 
