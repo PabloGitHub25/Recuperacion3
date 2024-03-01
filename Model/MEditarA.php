@@ -26,11 +26,11 @@ $row = mysqli_fetch_assoc($resultTarea);
 <body>
     <div class="container">
         <h1>Editar Tarea</h1>
-        <img src="../public/img/inicio.png" alt="Imagen">
+        <img src="../public/img/editar_eliminar.jpg" alt="Imagen">
         <form action="../Model/MActualizarTareasA.php" method="post" class="tareas-container">
         <input type="hidden" name="id" value="<?php echo $row['idTarea']; ?>">
         <label for="nombre">Nombre de la tarea: </label>
-        <input type="text" name="nombre" id="nombre" value="<?php echo $row['nombreTarea']; ?>">
+        <input type="text" name="nombre" id="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo se permiten letras y espacios" value="<?php echo $row['nombreTarea']; ?>" required>
         <br><br>
         <label for="tipo">Tipo de la tarea: </label>
         <select name="tipo" id="tipo">
@@ -42,7 +42,7 @@ $row = mysqli_fetch_assoc($resultTarea);
         </select>
         <br><br>
         <label for="descripcion">Descripción de la tarea: </label>
-        <textarea name="descripcion" id="decripcion" cols="100" rows="7"><?php echo $row['descripcion']; ?></textarea>
+        <textarea name="descripcion" id="decripcion" cols="100" rows="7" required><?php echo $row['descripcion']; ?></textarea>
         <br>
             <?php include("../Model/MVerificar.php"); ?>
             <center><input type="submit" value="Actualizar Tarea" class="button"></center>
