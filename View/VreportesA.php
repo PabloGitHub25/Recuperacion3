@@ -14,7 +14,7 @@
         <h1>Reportes</h1>
         <img src="../public/img/reportes_inicio.jpg" alt="Imagen">
         <div class="options">
-            <a href="../Model/M" class="button"></a>
+            <a href="../Model/MReporteTMasEscogida.php" class="button">Tareas mas escogidas</a>
             <a href="../Model/M" class="button"></a>
             <a href="../Model/M" class="button"></a>
         </div>
