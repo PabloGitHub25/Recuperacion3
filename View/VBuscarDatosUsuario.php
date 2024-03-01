@@ -15,7 +15,7 @@
             <form action="../Model/MBuscarDatosUsuario.php" method="GET">
                 <label for="idUser">ID de Usuario:</label>
                 <input type="text" id="idUser" name="idUser" required>
-                <input type="submit" value="Buscar">
+                <input type="submit" value="Buscar" class="button">
             </form>
 
             <?php
