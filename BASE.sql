@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-03-2024 a las 16:21:31
+-- Tiempo de generación: 01-03-2024 a las 23:16:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -33,6 +33,15 @@ CREATE TABLE `administrador` (
   `emailAdmin` varchar(30) NOT NULL,
   `contraseñaAdmin` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`idAdmin`, `nombreAdmin`, `emailAdmin`, `contraseñaAdmin`) VALUES
+(1, 'Pablo', 'pablo@gmail.com', '1234'),
+(2, 'Erick', 'erick@gmail.com', '1234'),
+(3, 'Sebastian', 'sebastian@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -87,7 +96,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUser`, `nombreUser`, `emailUser`, `contraseñaUser`) VALUES
-(1, 'PabloUser', 'user@gmail.com', '1234');
+(1, 'PabloUser', 'user@gmail.com', '1234'),
+(2, 'Lorena', 'lore@gmail.com', '$2y$10$Gy9'),
+(3, 'Lorena', 'lorena@gmail.com', '$2y$10$1GV');
 
 -- --------------------------------------------------------
 
@@ -106,7 +117,6 @@ CREATE TABLE `usuario_tarea` (
 --
 
 INSERT INTO `usuario_tarea` (`idUser`, `idTarea`, `estado`) VALUES
-(1, 2, 'Pendiente'),
 (1, 3, 'Pendiente'),
 (1, 5, 'Pendiente'),
 (1, 8, 'Pendiente'),
@@ -153,7 +163,7 @@ ALTER TABLE `usuario_tarea`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
@@ -165,7 +175,7 @@ ALTER TABLE `tareas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
