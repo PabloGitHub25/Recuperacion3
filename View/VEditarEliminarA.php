@@ -28,7 +28,7 @@
             echo '<td>' . $tarea['descripcion'] . '</td>';
             echo '<td>';
             echo '<a href="../Model/MEditarA.php?id=' . $tarea['idTarea'] . '">Editar</a> | ';
-            echo '<a href="eliminar.php?id=' . $tarea['idTarea'] . '">Eliminar</a>';
+            echo '<a href="../Model/MEliminarA.php?id=' . $tarea['idTarea'] . '">Eliminar</a>';
             echo '</td>';
             echo '</tr>';
         }
