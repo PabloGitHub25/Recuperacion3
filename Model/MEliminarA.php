@@ -39,7 +39,7 @@ $row = mysqli_fetch_assoc($resultTarea);
             <textarea name="descripcion" id="decripcion" cols="100" rows="7" readonly><?php echo $row['descripcion']; ?></textarea>
             <br>
             <?php include("../Model/MVerificar.php"); ?>
-            <center><input type="submit" value="Eliminar Tarea" class="button" disabled></center>
+            <center><input type="submit" value="Eliminar Tarea" class="button"></center>
         </form>
     </div>
 </body>
