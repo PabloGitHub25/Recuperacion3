@@ -16,6 +16,7 @@
         <div class="options">
             <a href="../View/VAgregarTareaA.php" class="button">Crear tareas nuevas</a>
             <a href="../View/VEditarEliminarA.php" class="button">Editar/Eliminar tareas</a>
+            <a href="../View/VEditarTareasUserA.php" class="button">Editar/Eliminar tareas de Usuarios</a>
             <a href="informe_tareas.php" class="button">Informes</a>
         </div>
     </div>
