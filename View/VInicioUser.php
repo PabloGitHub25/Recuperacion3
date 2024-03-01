@@ -9,7 +9,7 @@
 <body>
     <br><br><br>
     <br><br><br>
-    <br><br><br><br>
+    <br><br>
     <div class="container">
         <h1>Bienvenido a la Página Inicial</h1>
         <img src="../public/img/inicio.png" alt="Imagen">

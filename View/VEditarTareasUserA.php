@@ -37,7 +37,7 @@ if (isset($_SESSION['idUser'])) {
         echo '<td>' . $userTarea['nombreTarea'] . '</td>';
         echo '<td>';
         echo '<a href="../Model/MEditarTareaUserA.php?id=' . $userTarea['idTarea'] . '&idUser=' . $userTarea['idUser'] . '">Editar</a> | ';
-        echo '<a href="../Model/MEliminarTarea.php?id=' . $userTarea['idTarea'] . '">Eliminar</a>';
+        echo '<a href="../Model/MEliminarTareaUser.php?id=' . $userTarea['idTarea'] . '&idUser=' . $userTarea['idUser'] . '">Eliminar</a>';
         echo '</td>';
         echo '</tr>';
     }
