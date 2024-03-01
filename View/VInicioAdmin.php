@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAGINA INICIAL</title>
+    <title>Pagina Inicial AdminL</title>
     <link rel="stylesheet" href="../css/styleUser.css">
 </head>
 <body>
