@@ -24,7 +24,7 @@ select {
 
 input[type="submit"] {
     padding: 10px;
-    background-color: #4CAF50; /* Color verde */
+    background-color: #4B5082; /* Color verde */
     color: white;
     border: none;
     border-radius: 5px;
@@ -32,5 +32,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049; /* Cambia el color al pasar el ratón sobre él */
+    background-color: #242857; /* Cambia el color al pasar el ratón sobre él */
 }
