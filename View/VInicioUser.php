@@ -14,7 +14,7 @@
         <h1>Bienvenido a la Página Inicial</h1>
         <img src="../public/img/inicio.png" alt="Imagen">
         <div class="options">
-            <a href="../Controller/contolador.php?var1=1" class="button">Ingresar tareas nuevas</a>
+            <a href="../View/VIngresoTareaU.php" class="button">Ingresar tareas nuevas</a>
             <a href="../View/VEditar.php" class="button">Editar tareas</a>
             <a href="informe_tareas.php" class="button">Informe sobre tareas</a>
         </div>

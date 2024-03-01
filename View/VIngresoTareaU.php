@@ -11,7 +11,7 @@
         <h1>Agrega nuevas tareas</h1>
         <img src="../public/img/inicio.png" alt="Imagen">
         <form action="../Model/MIngresoTareaU.php" method="post" class="tareas-container">
-            <?php include("../Model/MAgregarTareas.php"); ?>
+            <?php include("../Model/MMostarTareasU.php"); ?>
             <?php include("../Model/MVerificar.php"); ?>
             <input type="submit" value="Agregar tareas" class="button">
         </form>
