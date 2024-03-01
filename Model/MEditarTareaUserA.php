@@ -51,7 +51,7 @@ $row = mysqli_fetch_assoc($resultTarea);
                 <option value="Completado" <?php if ($row['estado'] == 'Completado') echo 'selected'; ?>>Completado</option>
             </select>
             <br><br>
-            <input type="submit" value="Actualizar Estado" class="button>
+            <input type="submit" value="Actualizar Estado" class="button">
         </form>
     </div>
 </body>

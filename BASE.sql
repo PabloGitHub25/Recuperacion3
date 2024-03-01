@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-03-2024 a las 23:16:37
+-- Tiempo de generación: 02-03-2024 a las 00:10:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -97,8 +97,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUser`, `nombreUser`, `emailUser`, `contraseñaUser`) VALUES
 (1, 'PabloUser', 'user@gmail.com', '1234'),
-(2, 'Lorena', 'lore@gmail.com', '$2y$10$Gy9'),
-(3, 'Lorena', 'lorena@gmail.com', '$2y$10$1GV');
+(2, 'Lorena', 'lore@gmail.com', '$2y$10$Gy9');
 
 -- --------------------------------------------------------
 
@@ -117,10 +116,9 @@ CREATE TABLE `usuario_tarea` (
 --
 
 INSERT INTO `usuario_tarea` (`idUser`, `idTarea`, `estado`) VALUES
-(1, 3, 'Pendiente'),
+(1, 3, 'Completado'),
 (1, 5, 'Pendiente'),
 (1, 8, 'Pendiente'),
-(1, 9, 'Pendiente'),
 (1, 10, 'Pendiente'),
 (1, 11, 'Pendiente'),
 (1, 14, 'Pendiente'),
