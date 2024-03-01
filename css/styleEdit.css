@@ -1,7 +1,7 @@
-/* style.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: black; /* Cambia el color del texto a negro */
 }
 
