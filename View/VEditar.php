@@ -58,8 +58,9 @@ if (isset($_SESSION['idUser'])) {
                 }
                 ?>
             </table>
-
-            <input type="submit" value="Actualizar Estados">
+                <br>
+                <center><input type="submit" value="Actualizar Estados"></center>
+            
         </form>
     </body>
     </html>
