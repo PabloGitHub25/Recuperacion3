@@ -12,14 +12,21 @@ $resultado = mysqli_query($conexion, $sql);
 
 // Verificar si se encontraron resultados
 if (mysqli_num_rows($resultado) > 0) {
-    // Mostrar los datos del usuario
+    // Mostrar los datos del usuario en una ventana modal
+    echo '<div id="userModal" class="modal" style="display: block;">';
+    echo '    <div class="modal-content">';
+    echo '        <span class="close" onclick="closeUserModal()">&times;</span>';
+    echo '        <div id="userData">';
     while ($fila = mysqli_fetch_assoc($resultado)) {
-        echo "<h2>Datos del Usuario:</h2>";
-        echo "ID: " . $fila['idUser'] . "<br>";
-        echo "Nombre: " . $fila['nombreUser'] . "<br>";
-        echo "Email: " . $fila['emailUser'] . "<br>";
+        echo '<h2>Datos del Usuario:</h2>';
+        echo 'ID: ' . $fila['idUser'] . '<br>';
+        echo 'Nombre: ' . $fila['nombreUser'] . '<br>';
+        echo 'Email: ' . $fila['emailUser'] . '<br>';
         // Puedes mostrar más campos aquí según tu estructura de base de datos
     }
+    echo '        </div>';
+    echo '    </div>';
+    echo '</div>';
 } else {
     echo "<p>No se encontró ningún usuario con el ID proporcionado.</p>";
 }
