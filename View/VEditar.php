@@ -31,14 +31,14 @@ if (isset($_SESSION['idUser'])) {
         
         <form action="../Model/MActualizarTareas.php" method="post">
             <table border="1">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Tipo</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
-                    <th>Nuevo Estado</th>
-                </tr>
+            <tr class="titulo-fila">
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Nuevo Estado</th>
+    </tr>
 
                 <?php
                 while ($row = mysqli_fetch_assoc($resultTareasUsuario)) {
