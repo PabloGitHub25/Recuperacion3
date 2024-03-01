@@ -12,7 +12,7 @@ if (isset($_GET['idUser'])) {
 $idTarea = $_GET['id'];
 
 // Obtener los detalles de la tarea del usuario seleccionado desde la base de datos
-$sqlTarea = "SELECT t.*
+$sqlTarea = "SELECT t.*, ut.estado
              FROM usuario_tarea ut
              INNER JOIN tareas t ON ut.idTarea = t.idTarea
              WHERE ut.idUser = $idUser AND ut.idTarea = $idTarea";
@@ -37,22 +37,21 @@ $row = mysqli_fetch_assoc($resultTarea);
     <div class="container">
         <h1>Editar Tarea de Usuario</h1>
         <img src="../public/img/agregar.png" alt="Imagen">
-        <form action="../Model/MIEditarTareaUserA.php" method="post" class="tareas-container">
+        <form action="../Model/MActualizarTareas.php" method="post" class="tareas-container">
             <input type="hidden" name="id" value="<?php echo $row['idTarea']; ?>">
-            <label for="nombre">Nombre de la tarea: </label>
-            <input type="text" name="nombre" id="nombre" value="<?php echo $row['nombreTarea']; ?>" required>
-            <br><br>
-            <label for="descripcion">Descripción de la tarea: </label>
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10" required><?php echo $row['descripcion']; ?></textarea>
-            <br><br>
-            <label for="estado">Estado de la tarea: </label>
-            <select name="estado" id="estado">
-                <option value="Pendiente" <?php if (isset($row['estado']) && $row['estado'] == 'Pendiente') echo 'selected'; ?>>Pendiente</option>
-                <option value="Completada" <?php if (isset($row['estado']) && $row['estado'] == 'Completada') echo 'selected'; ?>>Completada</option>
+            <label for="nombre">Nombre de la tarea:</label>
+            <p><?php echo $row['nombreTarea']; ?></p>
+            <br>
+            <label for="descripcion">Descripción de la tarea:</label>
+            <p><?php echo $row['descripcion']; ?></p>
+            <br>
+            <label for="nuevo_estado">Estado de la tarea:</label>
+            <select name="nuevo_estado[<?php echo $row['idTarea']; ?>]">
+                <option value="Pendiente" <?php if ($row['estado'] == 'Pendiente') echo 'selected'; ?>>Pendiente</option>
+                <option value="Completado" <?php if ($row['estado'] == 'Completado') echo 'selected'; ?>>Completado</option>
             </select>
-
             <br><br>
-            <input type="submit" value="Actualizar Tarea">
+            <input type="submit" value="Actualizar Estado">
         </form>
     </div>
 </body>
