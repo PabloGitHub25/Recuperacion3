@@ -11,7 +11,12 @@ table {
 
 table, th, td {
     border: 1px solid black;
-    background-color: #C0C2D7;
+    
+}
+
+.titulo-fila th {
+    background-color: #4B5082; /* Color de fondo para las filas de títulos */
+    color: white;
 }
 
 th, td {
