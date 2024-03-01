@@ -11,6 +11,7 @@ table {
 
 table, th, td {
     border: 1px solid black;
+    background-color: #C0C2D7;
 }
 
 th, td {
@@ -20,6 +21,7 @@ th, td {
 
 select {
     padding: 5px;
+    background-color:#6f75af ;
 }
 
 input[type="submit"] {
