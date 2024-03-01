@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ejecutar la consulta y verificar si se realizó correctamente
     if (mysqli_query($conexion, $sql)) {
         // Redireccionar a una página de éxito si el registro fue exitoso
-        header("Location: ../View/VRegistroExitoso.php");
+        header("Location: ../index.html");
         exit();
     } else {
         // Mostrar un mensaje de error si hubo un problema con la consulta SQL

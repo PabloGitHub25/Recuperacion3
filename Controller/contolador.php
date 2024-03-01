@@ -7,6 +7,10 @@ if($v1==1)
 {
     include("../Model/MMostrar.php");
 }
+elseif($v1==3)
+{
+    include("../index.html");
+}
 else
 {
     echo "No se seleccionó nada";
