@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailUser = $_POST["emailUser"];
     $contraseñaUser = $_POST["contraseñaUser"];
 
+
+
     // Preparar la consulta SQL para insertar los datos en la base de datos
     $sql = "INSERT INTO usuario (nombreUser, emailUser, contraseñaUser) VALUES ('$nombreUser', '$emailUser', '$contraseñaUser')";
 

@@ -10,7 +10,7 @@
     <div class="modal">
         <div class="modal-content">
             <h1 style="text-align: center;">Registro de Nuevo Usuario</h1>
-            <form action="../Model/MRegistro.php" method="post">
+            <form action="../Model/MVerificarRegistro.php" method="post">
                 <label for="nombreUser">Nombre de Usuario:</label>
                 <input type="text" id="nombreUser" name="nombreUser" required>
                 <label for="emailUser">Email:</label>
