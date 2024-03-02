@@ -16,22 +16,24 @@ if (mysqli_num_rows($resultado) > 0) {
     echo '<link rel="stylesheet" href="../css/style.css">';
 
     // Mostrar los datos del usuario en una ventana modal
-    echo '<div id="userModal" class="modal";">';
+    echo '<div class="modal";">';
     echo '    <div class="modal-content">';
 
     while ($fila = mysqli_fetch_assoc($resultado)) {
         echo '<h2>Datos del Usuario:</h2>';
+        echo '<form action="../Model/MEditarDatosUsuario.php" method="post">'; // Agregamos el formulario de edición
+        echo '<input type="hidden" name="idUser" value="' . $fila['idUser'] . '">'; // Agregamos un campo oculto con el ID del usuario
         echo 'ID: ' . $fila['idUser'] . '<br>';
-        echo 'Nombre: ' . $fila['nombreUser'] . '<br>';
-        echo 'Email: ' . $fila['emailUser'] . '<br>';
-        echo 'Contraseña: ' . $fila['contraseñaUser'] . '<br>';
+        echo 'Nombre: <br><input type="text" name="editNombre" value="' . $fila['nombreUser'] . '"><br>'; // Campo de nombre editable
+        echo 'Email: <br><input type="text" name="editEmail" value="' . $fila['emailUser'] . '"><br>'; // Campo de email editable
+        echo 'Contraseña: <br><input type="text" name="editContraseña" value="' . $fila['contraseñaUser'] . '"><br>'; // Campo de contraseña editable
 
         echo '<br>';
-
-        echo '<button onclick="window.location.href=\'../View/VBuscarDatosUsuario.php\';" class="button">Cancelar</button>';
-
         echo '<button onclick="window.location.href=\'../View/VEditarDatosUsuario.php\';" class="button">Editar</button>';
+        echo '<br>';
         
+        echo '</form>';
+        echo '<button onclick="window.location.href=\'../View/VBuscarDatosUsuario.php\';" class="button">Cancelar</button>';
         // Puedes mostrar más campos aquí según tu estructura de base de datos
     }
 

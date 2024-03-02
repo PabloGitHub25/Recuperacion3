@@ -11,12 +11,13 @@
         <div class="modal-content">
             <h1>Editar Datos de Usuario</h1>
             <form action="../Model/MEditarDatosUsuario.php" method="post">
-                <input type="hidden" name="idUser" value="<?php echo $idUser; ?>">
-                <label for="editNombre">Nombre:</label>
+                <label for="idUser">ID de Usuario:</label>
+                <input type="text" id="idUser" name="idUser" value="<?php echo $idUser; ?>" readonly>
+                <label for="editNombre">Nuevo nombre:</label>
                 <input type="text" id="editNombre" name="editNombre" required>
-                <label for="editEmail">Email:</label>
+                <label for="editEmail">Nuevo email:</label>
                 <input type="text" id="editEmail" name="editEmail" required>
-                <label for="editContraseña">Contraseña:</label>
+                <label for="editContraseña">Nueva contraseña:</label>
                 <input type="password" id="editContraseña" name="editContraseña" required> 
                 <br><br>
                 <input type="submit" value="Actualizar" class="button">
