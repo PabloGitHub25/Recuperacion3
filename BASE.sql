@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-03-2024 a las 23:36:39
+-- Tiempo de generación: 03-03-2024 a las 00:27:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,14 +31,14 @@ CREATE TABLE `administrador` (
   `idAdmin` int(11) NOT NULL,
   `nombreAdmin` varchar(100) NOT NULL,
   `emailAdmin` varchar(30) NOT NULL,
-  `contrasenaAdmin` varchar(10) NOT NULL
+  `contraseñaAdmin` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `administrador`
 --
 
-INSERT INTO `administrador` (`idAdmin`, `nombreAdmin`, `emailAdmin`, `contrasenaAdmin`) VALUES
+INSERT INTO `administrador` (`idAdmin`, `nombreAdmin`, `emailAdmin`, `contraseñaAdmin`) VALUES
 (1, 'Pablo', 'pablo@gmail.com', '1234'),
 (2, 'Erick', 'erick@gmail.com', '1234'),
 (3, 'Sebastian', 'sebastian@gmail.com', '1234');
@@ -61,7 +61,7 @@ CREATE TABLE `tareas` (
 --
 
 INSERT INTO `tareas` (`idTarea`, `nombreTarea`, `tipoTarea`, `descripcion`) VALUES
-(1, 'Asistencia', 'Educacion', 'Asistir a la escuela regularmente y esforzarse por aprender y alcanzar buenos resultados academicos'),
+(1, 'Asistencia', 'Educación', 'Asistir a la escuela regularmente y esforzarse por aprender y alcanzar buenos resultados academicos.'),
 (2, 'Exploracion educativa', 'Educacion', 'Explorar opciones educativas futuras, como la universidad, la formacion profesional o la educacion tecnica.'),
 (3, 'Desarollo de habilidades', 'Educacion', 'Desarrollar habilidades de estudio efectivas y aprender a gestionar el tiempo de manera eficiente.'),
 (4, 'Autoaceptacion y confianza.', 'Desarrollo Personal', 'Fomentar la autoconciencia y la autoestima positiva.'),
@@ -76,7 +76,9 @@ INSERT INTO `tareas` (`idTarea`, `nombreTarea`, `tipoTarea`, `descripcion`) VALU
 (13, 'Ayuda y apoyo', 'Salud y Bienestar', 'Buscar ayuda y apoyo cuando sea necesario para abordar problemas de salud fisica o mental.'),
 (14, 'Exploracion de intereses profesionales', 'Desarrollo Personal', 'Explorar intereses profesionales y opciones de carrera.'),
 (15, 'Obtencion de experiencia laboral', 'Desarrollo Personal', 'Obtener experiencia laboral a traves de pasantias, voluntariado o empleo a tiempo parcial.'),
-(16, 'Desarrollo de habilidades profesionales', 'Desarrollo Personal', 'Desarrollar habilidades profesionales, como redaccion de curriculums, habilidades de entrevista y trabajo en equipo.');
+(16, 'Desarrollo de habilidades profesionales', 'Desarrollo Personal', 'Desarrollar habilidades profesionales, como redaccion de curriculums, habilidades de entrevista y trabajo en equipo.'),
+(17, 'Borrar', 'Educación', 'Borrar'),
+(18, 'BorrarDos', 'Educación', 'borrar2');
 
 -- --------------------------------------------------------
 
@@ -88,14 +90,14 @@ CREATE TABLE `usuario` (
   `idUser` int(11) NOT NULL,
   `nombreUser` varchar(100) NOT NULL,
   `emailUser` varchar(30) NOT NULL,
-  `contrasenaUser` varchar(10) NOT NULL
+  `contraseñaUser` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idUser`, `nombreUser`, `emailUser`, `contrasenaUser`) VALUES
+INSERT INTO `usuario` (`idUser`, `nombreUser`, `emailUser`, `contraseñaUser`) VALUES
 (1, 'PabloUser', 'user@gmail.com', '1234'),
 (2, 'ErickUser', 'user2@gmail.com', '1234'),
 (3, 'SebasUser', 'user3@gmail.com', '1234');
@@ -117,9 +119,6 @@ CREATE TABLE `usuario_tarea` (
 --
 
 INSERT INTO `usuario_tarea` (`idUser`, `idTarea`, `estado`) VALUES
-(1, 3, 'Completado'),
-(1, 5, 'Pendiente'),
-(1, 8, 'Pendiente'),
 (1, 10, 'Completado'),
 (1, 11, 'Pendiente'),
 (1, 14, 'Completado'),
@@ -182,7 +181,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `idTarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idTarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
