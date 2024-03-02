@@ -11,7 +11,7 @@ if (isset($_SESSION['idUser'])) {
         $descripcion = $_POST["descripcion"];
 
         // Insertar la nueva tarea en la tabla tareas
-        $sqlInsert = "INSERT INTO tareas (nombreTarea, tipoTarea, descripcionTarea) VALUES ('$nombre', '$tipo', '$descripcion')";
+        $sqlInsert = "INSERT INTO tareas (nombreTarea, tipoTarea, descripcion) VALUES ('$nombre', '$tipo', '$descripcion')";
         if (mysqli_query($conexion, $sqlInsert)) {
             echo "<script>alert('Nueva Tarea Agregada.');</script>";
             echo "<script>window.location.href='../View/VAgregarTareaA.php';</script>";

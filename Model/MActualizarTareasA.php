@@ -14,7 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result) {
         echo "<script>alert('Tarea actualizada correctamente');</script>";
-        echo "<script>window.location.href='../Model/MEditarA.php';</script>";
+        echo "<script>window.location.href='../View/VEditarEliminarA.php';</script>";
+        exit();
+
     } else {
         echo "<script>alert('Error al actualizar la tarea: " . mysqli_error($conexion) . "');</script>";
     }

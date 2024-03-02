@@ -1,18 +1,24 @@
 <?php
 include("../Config/confg.php");
 
-// Obtener el idTarea de la URL
-$idTarea = $_GET['id'];
+// Verificar si se recibió el parámetro 'id' en la URL
+if (isset($_GET['id'])) {
+    $idTarea = $_GET['id'];
 
-// Obtener los datos de la tarea desde la base de datos
-$sqlTarea = "SELECT * FROM tareas WHERE idTarea = $idTarea";
-$resultTarea = mysqli_query($conexion, $sqlTarea);
+    // Obtener los datos de la tarea desde la base de datos
+    $sqlTarea = "SELECT * FROM tareas WHERE idTarea = $idTarea";
+    $resultTarea = mysqli_query($conexion, $sqlTarea);
 
-if (!$resultTarea) {
-    die("Error al obtener la tarea: " . mysqli_error($conexion));
+    if (!$resultTarea) {
+        die("Error al obtener la tarea: " . mysqli_error($conexion));
+    }
+
+    $row = mysqli_fetch_assoc($resultTarea);
+} else {
+    // Si no se recibió el parámetro 'id', redirigir a otra página
+    header("Location: ../otra_pagina.php");
+    exit();
 }
-
-$row = mysqli_fetch_assoc($resultTarea);
 ?>
 
 <!DOCTYPE html>

@@ -5,72 +5,55 @@ include("../View/VPlantilla.php");
 session_start();
 
 if (isset($_SESSION['idUser'])) {
-    $idUser = $_SESSION['idUser'];
-
-    // Obtener datos del usuario
-    $sqlUser = "SELECT idUser, nombreUser FROM usuario WHERE idUser = $idUser";
-    $resultadoUser = mysqli_query($conexion, $sqlUser);
-    $userData = mysqli_fetch_assoc($resultadoUser);
-
-    // Consulta de tareas completadas
-    $sql = "SELECT t.idTarea, t.nombreTarea, t.tipoTarea, t.descripcion, ut.estado
-    FROM tareas t
-    LEFT JOIN usuario_tarea ut ON t.idTarea = ut.idTarea
-    WHERE ut.idUser = $idUser AND ut.estado = 'Completado'
-    ORDER BY t.idTarea";
-
-    $resultado = mysqli_query($conexion, $sql);
-
     $pdf = new PDF();
     $pdf->AliasNbPages();
     $pdf->AddPage();
 
-    $pdf->SetFont('Arial', 'B', 10); // Fuente en negrita con tamaño 14
-    $pdf->Cell(0, 10, 'Tareas Completadas', 0, 1, 'C'); // Título centrado
-    $pdf->Ln(5); // Salto de línea después del título
+    $pdf->Cell(0, 10, 'Tareas Completadas de Todos los Usuarios', 0, 1, 'C'); // Título centrado
 
-    // Crear fila para mostrar los datos del usuario
-    $pdf->SetFont('Arial', 'I', 10);
-    $pdf->Cell(0, 10, 'Usuario: ' . $userData['nombreUser'] . ' (ID: ' . $userData['idUser'] . ')', 0, 1, 'C');
-    $pdf->Ln(5);
+    // Consulta para obtener todos los usuarios
+    $sqlUsers = "SELECT idUser, nombreUser FROM usuario";
+    $resultadoUsers = mysqli_query($conexion, $sqlUsers);
+    
+    // Iterar sobre cada usuario
+    while ($userData = mysqli_fetch_assoc($resultadoUsers)) {
+        $idUser = $userData['idUser'];
+        $nombreUser = $userData['nombreUser'];
 
-    // Calcular el ancho total de la tabla
-    $anchoTotal = 30 + 45 + 30 + 30; // Suma de los anchos de las columnas
+        // Mostrar datos del usuario
+        $pdf->SetFont('Arial', 'I', 10);
+        $pdf->Cell(0, 10, 'Usuario: ' . $nombreUser . ' (ID: ' . $idUser . ')', 0, 1, 'C');
+        $pdf->Ln(5);
 
-    // Calcular la posición X para centrar la tabla
-    $centroX = ($pdf->GetPageWidth() - $anchoTotal) / 2;
+        // Crear las celdas de la tabla
+        $pdf->SetFont('Arial', '', 10); // Fuente normal
+        $pdf->SetFillColor(192, 194, 215); // #C0C2D7
+        $pdf->Cell(30, 4, 'ID Tarea', 1, 0, 'C', true);
+        $pdf->Cell(63, 4, 'Nombre Tarea', 1, 0, 'C', true);
+        $pdf->Cell(45, 4, 'Tipo Tarea', 1, 0, 'C', true);
+        $pdf->Cell(30, 4, 'Estado', 1, 1, 'C', true);
 
-    // Establecer la posición X al centro de la página
-    $pdf->SetX($centroX);
+        // Consulta de tareas completadas por usuario
+        $sql = "SELECT t.idTarea, t.nombreTarea, t.tipoTarea, ut.estado
+        FROM tareas t
+        LEFT JOIN usuario_tarea ut ON t.idTarea = ut.idTarea
+        WHERE ut.idUser = $idUser AND ut.estado = 'Completado'
+        ORDER BY t.idTarea";
 
-    // Crear las celdas de la tabla
-    $pdf->SetFillColor(192, 194, 215); // #C0C2D7
-    $pdf->Cell(30, 4, 'ID Tarea', 1, 0, 'C', true);
-    $pdf->Cell(45, 4, 'Nombre Tarea', 1, 0, 'C', true);
-    $pdf->Cell(30, 4, 'Tipo Tarea', 1, 0, 'C', true);
-    $pdf->Cell(30, 4, 'Estado', 1, 0, 'C', true);  
-    $pdf->Ln();
+        $resultado = mysqli_query($conexion, $sql);
 
-    // Mostrar datos del usuario en la misma tabla
-    $pdf->SetX($centroX);
-    $pdf->Cell(30, 4, $userData['idUser'], 1, 0, 'C');
-    $pdf->Cell(45, 4, $userData['nombreUser'], 1, 0, 'C');
-    $pdf->Cell(30, 4, '', 1, 0, 'C'); // Celda vacía para el tipo de tarea
-    $pdf->Cell(30, 4, '', 1, 0, 'C'); // Celda vacía para el estado
-    $pdf->Ln(); // Salto de línea después de los datos del usuario
-
-    while ($mostrar = mysqli_fetch_array($resultado)) {
-        $pdf->SetX($centroX);
-        $pdf->Cell(30, 4, $mostrar['idTarea'], 1, 0, 'C');
-        $pdf->Cell(45, 4, $mostrar['nombreTarea'], 1, 0, 'C');
-        $pdf->Cell(30, 4, $mostrar['tipoTarea'], 1, 0, 'C');
-        $pdf->Cell(30, 4, $mostrar['estado'], 1, 0, 'C'); 
-        $pdf->Ln(); // Salto de línea después de cada fila
+        // Mostrar tareas completadas del usuario en la tabla
+        while ($mostrar = mysqli_fetch_array($resultado)) {
+            $pdf->Cell(30, 4, $mostrar['idTarea'], 1, 0, 'C');
+            $pdf->Cell(63, 4, $mostrar['nombreTarea'], 1, 0, 'C');
+            $pdf->Cell(45, 4, $mostrar['tipoTarea'], 1, 0, 'C');
+            $pdf->Cell(30, 4, $mostrar['estado'], 1, 1, 'C');
+        }
+        $pdf->Ln(5); // Salto de línea después de los datos del usuario y la tabla
     }
 
     $pdf->Output('I');
 } else {
     echo "Usuario no logeado";
 }
-
 ?>
