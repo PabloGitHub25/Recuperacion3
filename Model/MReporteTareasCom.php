@@ -21,7 +21,7 @@ if (isset($_SESSION['idUser'])) {
     $pdf->AddPage();
 
     $pdf->SetFont('Arial', 'B', 10); // Fuente en negrita con tamaño 14
-    $pdf->Cell(0, 10, 'Tareas más Seleccionadas', 0, 1, 'C'); // Título centrado
+    $pdf->Cell(0, 10, 'Tareas Completadas', 0, 1, 'C'); // Título centrado
     $pdf->Ln(10); // Salto de línea después del título
     $pdf->SetFont('Arial', 'I', 7);
     $pdf->Ln(10);
