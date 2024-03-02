@@ -15,6 +15,7 @@
         <img src="../public/img/reportes_inicio.jpg" alt="Imagen">
         <div class="options">
             <a href="../Model/MReporte1.php" class="button">Todas las tareas</a>
+            <a href="../Model/MReporteTareasCom.php" class="button">Tareas Completadas</a>
         </div>
     </div>
 </body>
