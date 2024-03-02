@@ -13,12 +13,13 @@ if (isset($_SESSION['idUser'])) {
         // Insertar la nueva tarea en la tabla tareas
         $sqlInsert = "INSERT INTO tareas (nombreTarea, tipoTarea, descripcionTarea) VALUES ('$nombre', '$tipo', '$descripcion')";
         if (mysqli_query($conexion, $sqlInsert)) {
-            echo "Nueva tarea añadida correctamente";
+            echo "<script>alert('Nueva Tarea Agregada.');</script>";
+            echo "<script>window.location.href='../View/VAgregarTareaA.php';</script>";
         } else {
-            echo "Error al añadir la nueva tarea: " . mysqli_error($conexion);
+            echo "<script>alert('Error al añadir la nueva tarea: " . mysqli_error($conexion) . "');</script>";
         }
     }
 } else {
-    echo "Usuario no logeado";
+    echo "<script>alert('Usuario no logeado');</script>";
 }
 ?>

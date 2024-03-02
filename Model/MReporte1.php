@@ -17,6 +17,7 @@ if (isset($_SESSION['idUser'])) {
     $pdf->AddPage();
 
     $pdf->SetFont('Arial', 'I', 7);
+    $pdf->Cell(0, 10, 'Todas Mis Tareas', 0, 1, 'C'); // Título centrado
     $pdf->Ln(20);
 
     // Calcular el ancho total de la tabla

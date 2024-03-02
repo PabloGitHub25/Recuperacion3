@@ -18,14 +18,14 @@ if (isset($_SESSION['idUser'])) {
                     mysqli_query($conexion, $insercion);
                 }
             }
-
-            echo "Tareas agregadas correctamente";
+            echo "<script>alert('Tareas agregadas correctamente');</script>";
+            echo "<script>window.location.href='../View/VIngresoTaresU.php';</script>";
         } else {
-            echo "No se han seleccionado tareas";
+            echo "<script>alert('No se han seleccionado tareas');</script>";
         }
     }
 } else {
-    echo "Usuario no logeado";
+    echo "<script>alert('Usuario no logeado');</script>";
 }
 ?>
 

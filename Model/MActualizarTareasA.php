@@ -13,11 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conexion, $sql);
 
     if ($result) {
-        echo "Tarea actualizada correctamente";
+        echo "<script>alert('Tarea actualizada correctamente');</script>";
+        echo "<script>window.location.href='../Model/MEditarA.php';</script>";
     } else {
-        echo "Error al actualizar la tarea: " . mysqli_error($conexion);
+        echo "<script>alert('Error al actualizar la tarea: " . mysqli_error($conexion) . "');</script>";
     }
 } else {
-    echo "Acceso denegado";
+    echo "<script>alert('Acceso denegado');</script>";
 }
 ?>

@@ -15,7 +15,7 @@
         <img src="../public/img/reportes_inicio.jpg" alt="Imagen">
         <div class="options">
             <a href="../Model/MReporteTMasEscogida.php" class="button">Tareas mas escogidas</a>
-            <a href="../Model/M" class="button"></a>
+            <a href="../Model/MReporteTareasCom.php" class="button">Tareas Completadas</a>
             <a href="../Model/M" class="button"></a>
         </div>
     </div>

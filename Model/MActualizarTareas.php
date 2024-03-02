@@ -21,13 +21,12 @@ if (isset($_SESSION['idUser'])) {
                     die("Error al actualizar el estado de la tarea: " . mysqli_error($conexion));
                 }
             }
-
-            echo "Estados actualizados correctamente";
+            echo "<script>alert('Estados actualizados correctamente');</script>";
         } else {
-            echo "No se han seleccionado nuevos estados para las tareas";
-        }
+            echo "<script>alert('No se han seleccionado nuevos estados para las tareas');</script>";
+            }
     }
 } else {
-    echo "Usuario no logeado";
+    echo "<script>alert('Usuario no logeado');</script>";
 }
 ?>

@@ -10,11 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conexion, $sql);
 
     if ($result) {
-        echo "Tarea eliminada correctamente";
+        echo "<script>alert('Tarea eliminada correctamente');</script>";
+        echo "<script>window.location.href='../Model/MEliminarA.php';</script>";
     } else {
-        echo "Error al eliminar la tarea: " . mysqli_error($conexion);
+        echo "<script>alert('Error al eliminar la tarea: " . mysqli_error($conexion) . "');</script>";
     }
 } else {
-    echo "Acceso denegado";
+    echo "<script>alert('Acceso denegado');</script>";
 }
 ?>

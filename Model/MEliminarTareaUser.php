@@ -19,11 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
     if (!$resultEliminarTarea) {
         die("Error al eliminar la tarea: " . mysqli_error($conexion));
     }
-
-    // Redirigir a la página principal de edición de tareas de usuario
-    header("Location: ../View/VEditarTareasUserA.php");
+    echo "<script>alert('Tarea eliminada correctamente');</script>";
+    echo "<script>window.location.href='../View/VEditarTareasUserA.php';</script>";
     exit();
 } else {
-    die("Error: Método no permitido o falta el parámetro 'id'.");
+    echo "<script>alert('Error: Método no permitido o falta el parámetro 'id'.');</script>";
 }
 ?>
