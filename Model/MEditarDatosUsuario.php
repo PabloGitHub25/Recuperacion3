@@ -24,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '            <p>Nombre: ' . $nombreUser . '</p>';
         echo '            <p>Email: ' . $emailUser . '</p>';
         echo '            <p>Contraseña: ' . $contraseñaUser . '</p>';
+        echo '<button onclick="window.location.href=\'../View/VInicioAdmin.php\';" class="button">Aceptar</button>';
+
         echo '    </div>';
         echo '</div>';
     } else {

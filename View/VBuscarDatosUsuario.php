@@ -25,6 +25,7 @@
                 include("../Model/MBuscarDatosUsuario.php");
             }
             ?>
+            <button onclick="window.location.href='../View/VInicioAdmin.php';" class="button">Regresar</button>
         </div>
     </div>
 </body>
