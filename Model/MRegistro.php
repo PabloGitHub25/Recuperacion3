@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailUser = $_POST["emailUser"];
     $contraseñaUser = $_POST["contraseñaUser"];
 
+    // Incluir el modelo para verificar el registro
+    //include("../Model/MVerificarRegistro.php");
 
 
     // Preparar la consulta SQL para insertar los datos en la base de datos

@@ -29,7 +29,7 @@ if (mysqli_num_rows($resultado) > 0) {
         echo 'Contraseña: <br><input type="text" name="editContraseña" value="' . $fila['contraseñaUser'] . '"><br>'; // Campo de contraseña editable
 
         echo '<br>';
-        echo '<button onclick="window.location.href=\'../View/VEditarDatosUsuario.php\';" class="button">Editar</button>';
+        echo '<button onclick="window.location.href=\'../View/VEditarDatosUsuario.php\';" class="button">Guardar Cambios</button>';
         echo '<br>';
         
         echo '</form>';
@@ -40,7 +40,9 @@ if (mysqli_num_rows($resultado) > 0) {
     echo '    </div>';
     echo '</div>';
 } else {
-    echo "<p>No se encontró ningún usuario con el ID proporcionado.</p>";
+    echo "<script>alert('No se encontró ningún usuario con el ID proporcionado.');</script>";
+    echo "<script>window.location.href='../View/VBuscarDatosUsuario.php';</script>";
+    exit();
 }
 
 // Cerrar la conexión a la base de datos
