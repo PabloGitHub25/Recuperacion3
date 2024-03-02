@@ -13,7 +13,7 @@ $resultado = mysqli_query($conexion, $sql);
 // Verificar si se encontraron resultados
 if (mysqli_num_rows($resultado) > 0) {
     // Agregar el enlace a la hoja de estilos CSS
-    echo '<link rel="stylesheet" href="../css/style.css">';
+    echo '<link rel="stylesheet" href="../css/styleRegEdit.css">';
 
     // Mostrar los datos del usuario en una ventana modal
     echo '<div class="modal";">';

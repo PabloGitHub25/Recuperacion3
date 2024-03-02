@@ -28,32 +28,31 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="password"],
 .button {
-    width: 300px; /* Ajusta el ancho según tu preferencia */
-    height: 30px; /* Ajusta la altura según tu preferencia */
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #242857;
-    border-radius: 5px;
-}
-
-.button {
-    width: 20%;
-    height: 35px; /* Aumenta la altura en 5 píxeles */
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #242857;
-    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
     background-color: #8083AC;
     color: #FFF;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: none;
     cursor: pointer;
 }
 
 .button:hover {
     background-color: #4B5082;
-    border: 1px solid #4B5082;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 250px; /* Ajusta el ancho según tu preferencia */
+    height: 25px; /* Ajusta la altura según tu preferencia */
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #242857;
+    border-radius: 5px;
 }
 
 a {
@@ -64,9 +63,5 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-
-
-
 
 

@@ -11,7 +11,7 @@
         <div class="modal-content">
             <h1>Registro Exitoso</h1>
             <p>Tu registro ha sido exitoso. Ahora puedes iniciar sesión con tu cuenta.</p>
-            <button onclick="window.location.href='../index.html'" class="button">Iniciar Sesión</button>
+            <button onclick="window.location.href='../index.html'" class="button">Aceptar</button>
         </div>
     </div>
 </body>

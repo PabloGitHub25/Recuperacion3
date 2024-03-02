@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Éxito al actualizar los datos del usuario
         echo "<script>alert('Los datos del usuario han sido actualizados correctamente');</script>";
         // Mostrar los datos actualizados en una ventana modal
-        echo '<link rel="stylesheet" href="../css/style.css">';
+        echo '<link rel="stylesheet" href="../css/styleRegEdit.css">';
 
         echo '<div class="modal" ;>';
         echo '    <div class="modal-content">';
