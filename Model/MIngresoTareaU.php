@@ -10,16 +10,16 @@ if (isset($_SESSION['idUser'])) {
             $tareas = $_POST["tareas"];
 
             foreach ($tareas as $nombre) {
-                $consulta = "SELECT idTarea FROM usuario_tarea WHERE idUsuario='$idUser' AND idTarea IN (SELECT idTarea FROM tareas WHERE nombreTarea='$nombre')";
+                $consulta = "SELECT idTarea FROM usuario_tarea WHERE idUser='$idUser' AND idTarea IN (SELECT idTarea FROM tareas WHERE nombreTarea='$nombre')";
                 $resultado = mysqli_query($conexion, $consulta);
 
                 if (mysqli_num_rows($resultado) == 0) {
-                    $insercion = "INSERT INTO usuario_tarea (idUsuario, idTarea, estado) SELECT '$idUser', idTarea, 'Pendiente' FROM tareas WHERE nombreTarea='$nombre'";
+                    $insercion = "INSERT INTO usuario_tarea (idUser, idTarea, estado) SELECT '$idUser', idTarea, 'Pendiente' FROM tareas WHERE nombreTarea='$nombre'";
                     mysqli_query($conexion, $insercion);
                 }
             }
             echo "<script>alert('Tareas agregadas correctamente');</script>";
-            echo "<script>window.location.href='../View/VIngresoTaresU.php';</script>";
+            echo "<script>window.location.href='../View/VIngresoTareaU.php';</script>";
         } else {
             echo "<script>alert('No se han seleccionado tareas');</script>";
         }
