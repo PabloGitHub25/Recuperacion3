@@ -37,7 +37,7 @@ $row = mysqli_fetch_assoc($resultTarea);
     <div class="container">
         <h1>Editar Tarea de Usuario</h1>
         <img src="../public/img/agregar.png" alt="Imagen">
-        <form action="../Model/MActualizarTareas.php" method="post" class="tareas-container">
+        <form action="../Model/MActualizarTareasAA.php" method="post" class="tareas-container">
             <input type="hidden" name="id" value="<?php echo $row['idTarea']; ?>">
             <label for="nombre">Nombre de la tarea:</label>
             <p><?php echo $row['nombreTarea']; ?></p>
