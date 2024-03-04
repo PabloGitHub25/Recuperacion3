@@ -22,6 +22,7 @@ if (isset($_SESSION['idUser'])) {
                 }
             }
             echo "<script>alert('Estados actualizados correctamente');</script>";
+            echo "<script>window.location.href='../View/VEditar.php';</script>";
         } else {
             echo "<script>alert('No se han seleccionado nuevos estados para las tareas');</script>";
             }
